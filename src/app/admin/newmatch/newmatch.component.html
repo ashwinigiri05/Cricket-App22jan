@@ -1,0 +1,58 @@
+<div class="row justify-content-center align-items-center">
+  <div class="col-4 ">
+    <h4>
+      <b>New Match</b>
+    </h4>
+    <div class="form-group">
+      <label for="team1">Team1Name</label>
+      <input type="text" 
+      class="form-control"
+      placeholder=" Team1Name"
+      [(ngModel)]='team1Name'
+      >
+    </div>  
+    
+    <div class="form-group">
+      <label for="team2">Team2Name</label>
+      <input type="text" 
+      class="form-control" 
+      placeholder="Team2Name"
+      [(ngModel)]='team2Name'
+      >
+    </div>  
+    
+    <div class="form-group">
+      <label for="toss">Toss</label>
+      <select class="form-control" [(ngModel)]='toss'>
+        <option>{{team1Name}}</option>
+        <option>{{team2Name}}</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="Decision">Decision</label>
+      <select class="form-control" [(ngModel)]='decision'>
+        <option>Batting</option>
+        <option>Balling</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="over">Overs</label>
+      <input type="number" 
+      class="form-control"
+      [(ngModel)]='overs'>
+    </div> 
+    <div class="row">
+      <div class="col">
+        <button type="submit" class="btn btn-warning mb-2" (click)="onClearClick()">Clear</button>
+      </div>
+      <div class="col">
+        <button type="submit" class="btn btn-primary mb-2" (click)="onDefineClick()">DefineTeams</button>
+      </div>
+    </div> 
+    
+  </div>
+</div>
+
+

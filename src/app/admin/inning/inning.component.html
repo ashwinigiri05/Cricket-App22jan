@@ -1,0 +1,98 @@
+  <div class="row justify-content-center align-items-center my-4">
+    
+    <div class="col-4 ">
+      <h4 style="text-align: center"><b>Summary</b></h4>
+      <div class="form-group">
+        <label for="formGroupExampleInput" >Select Batsman On Strike</label>
+        <select class="form-control"  [(ngModel)]="batsmanOnStrike">
+          <option *ngFor="let batsman of matchService.getMatch().getTeam1().getPlayerName()">{{batsman.name}} </option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="formGroupExampleInput" >Select Non-Strike Batsman</label>
+        <select class="form-control" name="batsman" [(ngModel)]="bastsmanOnNonstrike">
+          <option *ngFor="let batsman of matchService.getMatch().getTeam1().getPlayerName()">{{batsman.name}} </option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="formGroupExampleInput" >Select New Baller</label>
+        <select class="form-control">
+          <option *ngFor="let bowler of matchService.getMatch().getTeam2().getPlayerName()">{{bowler.name}} </option>
+          <option *ngFor="let selectbowler of selectbowler3"> </option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="formGroupExampleInput" >Possibility of runs</label>
+        <select class="form-control">
+          <option>Runs</option>
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>6</option>
+          <option>Wicket</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="formGroupExampleInput2" >Wicket</label>
+        <select class="form-control">
+          <option>Wicket</option>
+          <option>Catch</option>
+          <option>Bold</option>
+          <option>Runout</option>
+          <option>Hit Wicket</option>
+          <option>Stump-Out</option>
+        </select>
+      </div>
+      
+      
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Catch By</label>
+        <select class="form-control">
+          <option *ngFor="let bowler of matchService.getMatch().getTeam2().getPlayerName()">{{bowler.name}} </option>
+          <option *ngFor="let selectbowler of selectbowler3"> </option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Balls</label>
+        <input type="text" 
+        class="form-control" 
+        [value]="ballnum" 
+        [(ngModel)]='balls'
+        [value]="currentBall"
+        [disabled]="txtBall" 
+        #ball
+        >
+      </div>
+      
+      <div class="form-group">
+        <label for="formGroupExampleInput2">overs</label>
+        <input type="text" 
+        class="form-control" 
+        [(ngModel)]='numberOfOvers' 
+        [value]="currentOver" 
+        placeholder="0" 
+        [disabled]="txtOver" 
+        #over
+        >
+      </div>
+      
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Commentry</label>
+        <textarea class="form-control" 
+        id="formGroupExampleInput2"
+        placeholder="Description" 
+        name="description" 
+        [(ngModel)] = "description"
+        >
+      </textarea>
+    </div>
+    <button type="button" class="btn btn-success my-2 " (click)="onaddscoreclick()">Add Score</button>
+  </div>
+</div> 

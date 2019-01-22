@@ -1,0 +1,24 @@
+ <div class="container">
+  <div class="row sm-6">
+    <div class="card w-50 mt-4 "> 
+      <div class="card-header">{{ matchService.getMatch().getTeam1Name() }}</div>
+      <div class="card-body">
+        <app-players [player]="player" [index]="i"
+        *ngFor="let player of matchService.getMatch().getTeam1().getPlayerName();index as i"></app-players>
+      </div>  
+    </div>
+    
+    <div class="card w-50 mt-4 ">
+      <div class="card-header">{{ matchService.getMatch().getTeam2Name() }}</div>
+      <div class="card-body">
+        <app-players [player]="player" [index]="i" 
+        *ngFor="let player of matchService.getMatch().getTeam2().getPlayerName();index as i"></app-players>
+      </div>
+    </div> 
+  </div>
+</div>
+<div class="col text-center mt-4">
+  <button class="btn btn-info" (click)="onStartInningClick()">Start Inning</button>
+</div>
+<router-outlet></router-outlet>
+
